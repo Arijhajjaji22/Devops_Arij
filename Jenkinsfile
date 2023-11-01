@@ -16,16 +16,17 @@ pipeline {
                 }
             }
         }
-
         stage('Build and Test Frontend') {
-            steps {
-                dir('DevOps_Project_Front') {
-                    sh 'npm install'
-                    sh 'ng build --prod'
-                    sh 'ng test'
-                }
+          steps {
+                 dir('DevOps_Project_Front') {
+                 sh '/usr/bin/npm install'  
+                 sh 'ng build --prod'
+                 sh 'ng test'
+               }
             }
         }
+
+
 
         stage('Deploy') {
             steps {
