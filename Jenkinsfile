@@ -4,17 +4,14 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Récupérer le code source depuis le référentiel
                 checkout scm
             }
         }
 
         stage('Build and Test Backend') {
             steps {
-                dir('backend') {
-                    // Build Spring Boot backend
+                dir('DevOps_Project') {
                     sh 'mvn clean package'
-                    // Exécutez les tests
                     sh 'mvn test'
                 }
             }
@@ -22,12 +19,9 @@ pipeline {
 
         stage('Build and Test Frontend') {
             steps {
-                dir('frontend') {
-                    // Installation des dépendances Angular
+                dir('DevOps_Project_Front') {
                     sh 'npm install'
-                    // Build de l'application Angular
                     sh 'ng build --prod'
-                    // Exécutez les tests Angular
                     sh 'ng test'
                 }
             }
@@ -35,16 +29,11 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                // Ajoutez les étapes de déploiement ici
-                // Par exemple, vous pouvez déployer le backend et le frontend sur un serveur ou dans des conteneurs Docker.
-
-                // Exemple de déploiement du backend dans un serveur Tomcat
-                dir('backend/target') {
+                dir('DevOps_Project/target') {
                     sh 'cp your-app.war /path/to/tomcat/webapps'
                 }
 
-                // Exemple de déploiement du frontend sur un serveur web
-                dir('frontend/dist') {
+                dir('DevOps_Project_Front/dist') {
                     sh 'rsync -avz . user@your-server:/path/to/your/website'
                 }
             }
