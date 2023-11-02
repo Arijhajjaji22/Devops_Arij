@@ -17,14 +17,15 @@ pipeline {
             }
         }
         stage('Build and Test Frontend') {
-          steps {
-                 dir('DevOps_Project_Front') {
-                 sh '/usr/bin/npm install'  
-                 sh 'ng build --prod'
-                 sh 'ng test'
-               }
-            }
+    steps {
+        dir('DevOps_Project_Front') {
+            sh '/home/arijhajjaji/.nvm/versions/node/v16.20.2/bin/npm install' // Assurez-vous que le chemin global pour npm est correctement configuré
+            sh '/home/arijhajjaji/.nvm/versions/node/v16.20.2/bin/ng build --configuration=production' // Utilisez le chemin complet vers ng
+            sh '/home/arijhajjaji/.nvm/versions/node/v16.20.2/bin/ng test' // Utilisez le chemin complet vers ng
         }
+    }
+}
+
 
 
 
