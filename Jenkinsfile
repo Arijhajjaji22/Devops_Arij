@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	 tools {
+        nodejs 'Node.js 20.9.0' 
+    }
 
     stages {
         stage('Checkout') {
@@ -16,16 +19,15 @@ pipeline {
                 }
             }
         }
-        stage('Build and Test Frontend') {
-             steps {
-              dir('DevOps_Project_Front') {
-               sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/npm install'
-               sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/ng build --configuration=production'
-               sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/ng test'
-    }
-}
-
-}
+stage('Build and Test Frontend') {
+            steps {
+                dir('DevOps_Project_Front') {
+                    sh 'npm install' 
+                    sh 'ng build --configuration=production' 
+                    sh 'ng test' 
+                }
+            }
+        }
 
 
 
