@@ -3,6 +3,8 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ProductComponent } from './product.component';
 import {ProductService} from "../services/product.service";
+import { ActivatedRoute } from '@angular/router';
+
  // Import FormsModule
 
 describe('ProductComponent', () => {
