@@ -21,7 +21,7 @@ describe('ProductComponent', () => {
       }
     ]
   });
-});
+
 
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
@@ -29,8 +29,7 @@ describe('ProductComponent', () => {
   });
 
  it('should create', () => {
-  const fixture = TestBed.createComponent(ProductComponent);
-  const component = fixture.componentInstance;
+  
   expect(component).toBeTruthy();
 });
 
