@@ -3,6 +3,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { StockComponent } from './stock.component';
 import {StockService} from "../services/stock.service";
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 describe('StockComponent', () => {
