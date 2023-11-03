@@ -28,7 +28,10 @@ describe('ProductComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+ it('should create', () => {
+  const fixture = TestBed.createComponent(ProductComponent);
+  const component = fixture.componentInstance;
+  expect(component).toBeTruthy();
+});
+
 });
