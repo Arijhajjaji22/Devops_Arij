@@ -11,6 +11,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ContactComponent } from './contact/contact.component'; // Import FormsModule
+import { StockService } from './stock.service';
+import { ProductService } from './product.service';
 
 
 
@@ -31,7 +33,7 @@ import { ContactComponent } from './contact/contact.component'; // Import FormsM
     MatDialogModule,
     FormsModule
   ],
-  providers: [],
+  providers:  [StockService, ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
