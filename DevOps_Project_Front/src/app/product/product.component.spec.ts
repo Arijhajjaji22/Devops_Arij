@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { ProductComponent } from './product.component';
-import {ProductService} from "./services/product.service"; // Import FormsModule
+import {ProductService} from "../services/product.service";
+ // Import FormsModule
 
 describe('ProductComponent', () => {
   let component: ProductComponent;
