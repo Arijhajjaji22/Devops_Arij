@@ -1,5 +1,8 @@
 pipeline {
     agent any
+	environment {
+        DISPLAY = ':99'
+    }
 	 tools {
         nodejs 'Node.js 20.9.0' 
     }
