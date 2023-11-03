@@ -6,6 +6,13 @@ pipeline {
 	 tools {
         nodejs 'Node.js 20.9.0' 
     }
+	stages {
+        stage('Setup Xvfb') {
+            steps {
+                sh 'Xvfb :99 -screen 0 1024x768x16 &'
+                sh 'export DISPLAY=:99'
+            }
+        }
 
     stages {
         stage('Checkout') {
