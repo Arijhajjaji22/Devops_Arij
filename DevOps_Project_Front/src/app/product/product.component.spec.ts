@@ -12,14 +12,17 @@ describe('ProductComponent', () => {
   let fixture: ComponentFixture<ProductComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ProductComponent],
-	  imports: [HttpClientTestingModule],
-	   providers: [
+  TestBed.configureTestingModule({
+    declarations: [ProductComponent],
+    imports: [HttpClientTestingModule],
+    providers: [
       ProductService,
       { provide: ActivatedRoute, useValue: { snapshot: { paramMap: new Map() } }
-    ],
-    });
+      }
+    ]
+  });
+});
+
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
