@@ -13,7 +13,10 @@ describe('ProductComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ProductComponent],
 	  imports: [HttpClientTestingModule],
-	   providers: [ProductService],
+	   providers: [
+      ProductService,
+      { provide: ActivatedRoute, useValue: { snapshot: { paramMap: new Map() } }
+    ],
     });
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
