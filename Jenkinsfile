@@ -13,13 +13,15 @@ pipeline {
                 sh 'export DISPLAY=:99'
             }
         }
+		
 
-    stages {
+    
         stage('Checkout') {
             steps {
                 checkout scm
             }
         }
+
 
         stage('Build and Test Backend') {
             steps {
@@ -55,3 +57,4 @@ stage('Build and Test Frontend') {
         }
     }
 }
+
