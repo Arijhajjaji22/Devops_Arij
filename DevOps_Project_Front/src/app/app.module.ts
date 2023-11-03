@@ -10,9 +10,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
-import { ContactComponent } from './contact/contact.component'; // Import FormsModule
-import { StockService } from './stock.service';
-import { ProductService } from './product.service';
+import { ContactComponent } from './contact/contact.component';
+import {StockService} from "./services/stock.service";
+import {ProductService} from "./services/product.service"; // Import FormsModule
 
 
 
