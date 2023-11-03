@@ -11,6 +11,7 @@ describe('ProductComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ProductComponent],
 	  imports: [HttpClientTestingModule], 
+	   providers: [ProductService], 
     });
     fixture = TestBed.createComponent(ProductComponent);
     component = fixture.componentInstance;
