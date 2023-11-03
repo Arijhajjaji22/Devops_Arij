@@ -11,6 +11,7 @@ describe('StockComponent', () => {
     TestBed.configureTestingModule({
 	 declarations: [StockComponent],
 	imports: [HttpClientTestingModule],
+	 providers: [StockService],
      
     });
     fixture = TestBed.createComponent(StockComponent);
