@@ -12,7 +12,8 @@ describe('StockComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
 	 declarations: [StockComponent],
-	imports: [HttpClientTestingModule],
+imports: [HttpClientTestingModule, MatDialogModule],
+
 	 providers: [StockService],
 
     });
