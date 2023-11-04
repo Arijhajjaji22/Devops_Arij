@@ -8,11 +8,18 @@ describe('AppComponent', () => {
     declarations: [AppComponent]
   }));
 
-  it('should create the app', () => {
+  // it('should create the app', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.componentInstance;
+  //   expect(app).toBeTruthy();
+  // });
+  it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h1').textContent).toContain('SummerWorkshop_Angular app is running!');
   });
+
 
   it(`should have as title 'SummerWorkshop_Angular'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
