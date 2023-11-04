@@ -44,11 +44,7 @@ stage('Build and Test Frontend') {
 
 
 
-        stage('Deploy') {
-            steps {
-                
-            }
-        }
+       
     }
 }
 
