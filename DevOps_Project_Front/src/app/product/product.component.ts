@@ -22,7 +22,7 @@ export class ProductComponent {
     price: any;
     quantity: any;
   } = {
-      title: null,
+      title: '',
       category: null,
       price: null,
       quantity: null
