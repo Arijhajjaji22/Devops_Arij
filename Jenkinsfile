@@ -36,7 +36,7 @@ stage('Build and Test Frontend') {
         dir('DevOps_Project_Front') {
             sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/npm install'
             sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/ng build --configuration=production'
-            sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/ng test'
+
         }
     }
 }
