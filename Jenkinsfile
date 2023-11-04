@@ -36,7 +36,7 @@ stage('Build and Test Frontend') {
         dir('DevOps_Project_Front') {
             sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/npm install'
             sh '/home/arijhajjaji/.nvm/versions/node/v20.9.0/bin/ng build --configuration=production'
-
+      
         }
     }
 }
@@ -45,15 +45,7 @@ stage('Build and Test Frontend') {
 
 
         stage('Deploy') {
-            steps {
-                dir('DevOps_Project/target') {
-                    sh 'cp your-app.war /path/to/tomcat/webapps'
-                }
-
-                dir('DevOps_Project_Front/dist') {
-                    sh 'rsync -avz . user@your-server:/path/to/your/website'
-                }
-            }
+            
         }
     }
 }
