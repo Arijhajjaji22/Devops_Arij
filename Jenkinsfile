@@ -40,6 +40,17 @@ stage('Build and Test Frontend') {
         }
     }
 }
+        stage('JaCoCo Coverage') {
+            steps {
+                dir('DevOps_Project') {
+                    // Exécutez les tests avec JaCoCo activé
+                    sh 'mvn clean verify'
+
+                    // Générez un rapport de couverture JaCoCo au format HTML
+                    sh 'java -jar /chemin/vers/jacococli.jar report target/jacoco.exec --classfiles target/classes --html target/jacoco-report'
+                }
+            }
+        }
 
 
 
