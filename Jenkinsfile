@@ -51,6 +51,13 @@ stage('Build and Test Frontend') {
             }
         }
 
+stage('Deploy to Nexus') {
+    steps {
+        dir('DevOps_Project') {
+            sh 'mvn deploy'  
+        }
+    }
+}
 
 
 
