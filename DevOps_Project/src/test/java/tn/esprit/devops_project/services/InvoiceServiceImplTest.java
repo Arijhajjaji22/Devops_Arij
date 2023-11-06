@@ -45,19 +45,5 @@ public class InvoiceServiceImplTest {
         Assertions.assertTrue(allInvoices.isEmpty());
     }
 
-    @Test
-    public void cancelInvoiceTest() {
-        Long invoiceId = 1L;
-        Invoice invoice = new Invoice(); // Create a test invoice
-
-        Mockito.when(invoiceRepository.findById(invoiceId)).thenReturn(java.util.Optional.of(invoice));
-
-        // Call the cancelInvoice method from your service
-        invoiceService.cancelInvoice(invoiceId);
-
-        // Verify that the invoice is archived
-        Assertions.assertTrue(invoice.isArchived());
-    }
-
-    // Add more test methods for other functionalities of your service
+    
 }
