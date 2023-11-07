@@ -60,6 +60,7 @@ stage('Deploy to Nexus') {
 }
 stage('SonarQube Analysis') {
     steps {
+	dir('C:\\Users\\hp\\Desktop\\dev\\DevOps_Project_Front\\Devops_Arij\\DevOps_Project')
         sh 'mvn sonar:sonar'
     }
 }
