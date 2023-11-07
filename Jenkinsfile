@@ -2,7 +2,9 @@ pipeline {
     agent any
 	environment {
         DISPLAY = ':99'
-    }
+		 SONARQUBE_URL = 'http://localhost:9000'
+		 
+    } 
 	 tools {
         nodejs 'Node.js 20.9.0' 
     }
@@ -61,8 +63,7 @@ stage('Deploy to Nexus') {
 stage('SonarQube Analysis') {
     steps {
 	 dir('DevOps_Project'){
-	
-        sh 'mvn sonar:sonar'
+	sh "mvn sonar:sonar -Dsonar.host.url=${SONARQUBE_URL}"
 		}
     }
 }
