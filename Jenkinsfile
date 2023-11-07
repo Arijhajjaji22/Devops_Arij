@@ -2,7 +2,7 @@ pipeline {
     agent any
 	environment {
         DISPLAY = ':99'
-		 SONARQUBE_URL = 'http://localhost:9000'
+		 SONARQUBE_URL = 'http://192.168.240.130:9000'
 		 
     } 
 	 tools {
