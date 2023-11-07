@@ -60,9 +60,10 @@ stage('Deploy to Nexus') {
 }
 stage('SonarQube Analysis') {
     steps {
-	 dir('DevOps_Project')
+	 dir('DevOps_Project'){
 	
         sh 'mvn sonar:sonar'
+		}
     }
 }
 
