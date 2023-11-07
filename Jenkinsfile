@@ -58,6 +58,13 @@ stage('Deploy to Nexus') {
         }
     }
 }
+stage('SonarQube Analysis') {
+    steps {
+        withSonarQubeEnv('My SonarQube Server') {
+            sh 'mvn sonar:sonar'
+        }
+    }
+}
 
 
 
