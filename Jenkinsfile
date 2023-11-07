@@ -3,6 +3,7 @@ pipeline {
 	environment {
         DISPLAY = ':99'
 		 SONARQUBE_URL = 'http://192.168.240.130:9000'
+		 SONARQUBE_TOKEN = 'squ_e60b799275b78e58cdb5a199dd860d94864aec82'
 		 
     } 
 	 tools {
@@ -63,7 +64,7 @@ stage('Deploy to Nexus') {
 stage('SonarQube Analysis') {
     steps {
 	 dir('DevOps_Project'){
-	sh "mvn sonar:sonar -Dsonar.host.url=${SONARQUBE_URL}"
+	 sh "mvn sonar:sonar -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SONARQUBE_TOKEN}"
 		}
     }
 }
