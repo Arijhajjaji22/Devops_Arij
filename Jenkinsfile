@@ -43,6 +43,7 @@ stage('Build and Test Frontend') {
         }
     }
 }
+       
         stage('JaCoCo Coverage') {
             steps {
                 dir('DevOps_Project') {
@@ -68,6 +69,22 @@ stage('SonarQube Analysis') {
 		}
     }
 }
+       stage('Build Docker Image - Frontend') {
+            steps {
+                script {
+                    def frontendDockerfilePath = 'DevOps_Project_Front'
+                    sh "docker build -t frontend-image ${frontendDockerfilePath}"
+                }
+            }
+        }
+		stage('Build Docker Image - Backend') {
+            steps {
+                script {
+                    def backendDockerfilePath = 'DevOps_Project'
+                    sh "docker build -t backend-image ${backendDockerfilePath}"
+                }
+            }
+        }
 
 
 
