@@ -3,11 +3,14 @@ FROM node:18.16.1
 
 # Répertoire de travail
 WORKDIR /app
-# Installer Angular CLI
-RUN npm install -g @angular/cli
+# Copier les fichiers du frontend
+COPY . .
 
 # Installer les dépendances
 RUN npm install
+
+# Installer Angular CLI
+RUN npm install -g @angular/cli
 
 # Construire l'application
 RUN ng build --configuration=production
