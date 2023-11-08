@@ -33,7 +33,31 @@ pipeline {
                     sh 'mvn test'
                 }
             }
+		
+       post {
+        failure {
+            script {
+                emailext(
+                    subject: "Pipeline Failed: ${currentBuild.fullDisplayName}",
+                    body: "The pipeline has failed. Please check the console output for details.",
+                    to: 'arija9074@gmail.com',
+                    attachLog: true,
+                )
+            }
         }
+        
+        success {
+            script {
+                emailext(
+                    subject: "Pipeline Succeeded: ${currentBuild.fullDisplayName}",
+                    body: "The pipeline has succeeded. You can view the results at ${BUILD_URL}",
+                    to: 'arija9074@gmail.com',
+                    attachLog: true,
+                )
+            }
+        }
+    } }
+		
 stage('Build and Test Frontend') {
     steps {
         dir('DevOps_Project_Front') {
